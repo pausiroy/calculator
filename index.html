@@ -5,46 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
-    <script src="calculator.js" defer></script>
+    <script src="calculator.js"></script>
 </head>
 <body>
     <main class="container">
         <header class="header">
             <h1>Calculator</h1>
         </header>
-        <section class="display">
-            <div class="previousvalue"></div>
-            <input type="text" class="currentvalue" value="0" readonly>
-        </section>
-        <button class="clearEntry function">CE</button>
-        <button class="clear function">CE</button>
-        <button class="delete function">
-            <i class="fa-solid fa-delete-left"></i>
-        </button>
-        <button class="operator divide function">/</button>
-        
-        <button class="number function">7</button>
-        <button class="number function">8</button>
-        <button class="number function">9</button>
-        <button class="operator function">*</button>
-        
-        <button class="number">4</button>
-        <button class="number">5</button>
-        <button class="number">6</button>
-        <button class="operator function">-</button>
-        
-        <button class="number">1</button>
-        <button class="number">2</button>
-        <button class="number">3</button>
-        <button class="operator function">+</button>
-        
-        <button class="signChange">+/-</button>
-        <button class="number">0</button>
-        <button class="number">.</button>
-        <button class="equals">=</button>
+        <input type="text" class="calculator-screen" value="0" disabled>
+        <section class="display"></section>
+        <section class="buttons">
 
+            <button type="button" class="allClear">AC</button>
+            <button type="button" class="clear">C</button>
+            <button type="button" class="delete">DEL</button>
+            <button type="button" class="operator">/</button>
+
+
+            <button type="button" class="numbers">7</button>
+            <button type="button" class="numbers">8</button>
+            <button type="button" class="numbers">9</button>
+            <button type="button" class="operator">*</button>
+
+            <button type="button" class="numbers">4</button>
+            <button type="button" class="numbers">5</button>
+            <button type="button" class="numbers">6</button>
+            <button type="button" class="operator">-</button>
+
+            <button type="button" class="numbers">1</button>
+            <button type="button" class="numbers">2</button>
+            <button type="button" class="numbers">3</button>
+            <button type="button" class="operator">+</button>
+
+            <button type="button" class="numbers">0</button>
+            <button type="button" class="equals">=</button>
+
+        </section>
     </main>
 </body>
 </html>
