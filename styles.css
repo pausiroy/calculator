@@ -67,6 +67,10 @@ button:hover {
     background-color: #2e86c0;
     border-color: #337cac;
     color: #fff;
+    grid-row-start: 5;
+    grid-column-start: 5;
+    grid-column-end: 2;
+    height: 100%;
 }
 
 .equals:hover {
@@ -75,4 +79,7 @@ button:hover {
 
 .buttons {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
 }
