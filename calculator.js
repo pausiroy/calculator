@@ -5,6 +5,8 @@ const calculator = {
     operator: null,
 };
 
+
+
 function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
     
@@ -12,6 +14,7 @@ function inputDigit(digit) {
         calculator.displayValue = digit;
         calculator.waitingForSecondOperand = false;
     } else {
+        // Overwrite `displayValue` if the current value is '0' otherwise append to it
         calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;    
     }
     console.log(calculator);
@@ -24,14 +27,18 @@ function inputDecimal(dot) {
         calculator.waitingForSecondOperand = false;
         return
     }
-   
+   // If the `displayValue` property does not contain a decimal point
     if(!calculator.displayValue.includes(dot)){
+        // Append the decimal point
         calculator.displayValue += dot
     } 
 }
 
 function handleOperator(nextOperator) {
+    // Destructure the properties on the calculator object
     const { displayValue, firstOperand, operator } = calculator
+    // `parseFloat` converts the string contents of `displayValue`
+  // to a floating-point number
     const inputValue = parseFloat(displayValue);
 
     if( operator && calculator.waitingForSecondOperand) {
@@ -39,8 +46,11 @@ function handleOperator(nextOperator) {
         console.log(calculator);
         return
     }
-
+    
+   // verify that `firstOperand` is null and that the `inputValue`
+  // is not a `NaN` value
     if(firstOperand === null && !isNaN(inputValue)) {
+        // Update the firstOperand property
         calculator.firstOperand = inputValue
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
@@ -80,12 +90,17 @@ function updateDisplay() {
     display.value = calculator.displayValue;
 }
 
+//Handle key presses
+
 
 const keys = document.querySelector('.calculator-keys');
 
 keys.addEventListener('click', (event) => {
     const target = event.target
 
+  // Check if the clicked element is a button.
+  // If not, exit from the function
+    
     if(!target.matches('button')) {
         return
     }
